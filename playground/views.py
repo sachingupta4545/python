@@ -1,11 +1,17 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+# from .sudoku_logic import generate_puzzle
 
 # def say_hello(request):
 #     return HttpResponse("Hello, world! This is a response from the playground app.")
 
 def say_hello(request):
-    name = request.GET.get('name', 'Guest')  # default to 'Guest' if not provided
-    return HttpResponse(f"Hello, {name}!")
+    return HttpResponse("Hello!")
 
 # Create your views here.
+
+
+def home(request):
+    # puzzle = generate_puzzle(40)
+    puzzle = puzzle = [[0]*9 for _ in range(9)]
+    return render(request, 'playground/home.html', {'puzzle': puzzle})

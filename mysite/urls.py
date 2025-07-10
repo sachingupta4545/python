@@ -17,9 +17,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.urls import include
+from playground import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     # path('playground/', include('playground.urls')),
     path('', include('playground.urls'))   # include playground app’s urls
+    # path('', views.home, name='home'),
 ]

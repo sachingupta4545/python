@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sudoku Web</title>
+    <style>
+        table { border-collapse: collapse; }
+        td { width:40px; height:40px; text-align:center; border:1px solid #000; font-size:18px; }
+    </style>
+</head>
+<body>
+    <h1>Sudoku Puzzle</h1>
+    <table>
+    {% for row in puzzle %}
+        <tr>
+        {% for cell in row %}
+            <td>{{ cell if cell != 0 else "" }}</td>
+        {% endfor %}
+        </tr>
+    {% endfor %}
+    </table>
+    <form method="get">
+        <button type="submit">New Game</button>
+    </form>
+</body>
+</html>
