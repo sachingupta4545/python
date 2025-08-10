@@ -13,5 +13,4 @@ def say_hello(request):
 
 def home(request):
     # puzzle = generate_puzzle(40)
-    puzzle = puzzle = [[0]*9 for _ in range(9)]
     return render(request, 'playground/home.html', {'puzzle': puzzle})
